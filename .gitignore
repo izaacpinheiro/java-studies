@@ -1,0 +1,38 @@
+# Java
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# Diretórios gerados
+target/
+out/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+.nb-gradle/
+
+# Maven wrapper (se estiver usando)
+.mvn/
+!**/mvnw
+!**/mvnw.cmd
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.swp
+*.swo
