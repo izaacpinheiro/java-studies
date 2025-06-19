@@ -1,4 +1,4 @@
-package br.com.izaacpinheiro.javastudies;
+package br.com.izaacpinheiro.javastudies.Casting;
 
 public class Casting {
     public static void main(String[] args) {
