@@ -1,12 +1,17 @@
 package br.com.izaacpinheiro.javastudies.AluraJavaPOO;
 
-public class Title {
+public class Title implements Comparable<Title> {
     private String name;
     private int year;
     private boolean includedInPlan;
     private double sumRating;
     private int totalRating;
     private int durationInMinutes;
+
+    public Title(String name, int year) {
+        this.name = name;
+        this.year = year;
+    }
 
     public void showInfos() {
         System.out.println(name);
@@ -57,5 +62,13 @@ public class Title {
 
     public int getDurationInMinutes() {
         return durationInMinutes;
+    }
+
+    // implementado o Comparabl<> para quando quiser comparar classes criadas a partir de alguma lógica
+    // é preciso dar Override para implementar a lógica de comparação
+    @Override
+    public int compareTo(Title anotherTitle) {
+        // comparando e ordenando por nome
+        return this.getName().compareTo(anotherTitle.getName());
     }
 }
