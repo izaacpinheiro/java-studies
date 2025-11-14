@@ -36,3 +36,5 @@ Thumbs.db
 # Arquivos temporários
 *.swp
 *.swo
+
+*.json

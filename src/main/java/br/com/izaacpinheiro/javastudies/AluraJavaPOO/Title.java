@@ -1,5 +1,7 @@
 package br.com.izaacpinheiro.javastudies.AluraJavaPOO;
 
+import br.com.izaacpinheiro.javastudies.AluraJavaPOO.exceptions.ErroConversaoDeAnoException;
+
 public class Title implements Comparable<Title> {
     private String name;
     private int year;
@@ -11,6 +13,17 @@ public class Title implements Comparable<Title> {
     public Title(String name, int year) {
         this.name = name;
         this.year = year;
+    }
+
+    // construtor para converter um record em title
+    public Title(TitleOmdb myTitleOmdb) {
+        this.name = myTitleOmdb.title();
+        this.durationInMinutes = Integer.valueOf(myTitleOmdb.runtime().substring(0 ,3).strip());
+        if (myTitleOmdb.year().length() > 4) {
+            // nossa exception criada
+            throw new ErroConversaoDeAnoException("Conversão de ano impossivel pois tem mais de 4 caracteres");
+        }
+        this.year = Integer.valueOf(myTitleOmdb.year());
     }
 
     public void showInfos() {
@@ -70,5 +83,11 @@ public class Title implements Comparable<Title> {
     public int compareTo(Title anotherTitle) {
         // comparando e ordenando por nome
         return this.getName().compareTo(anotherTitle.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "name='" + name + '\'' +
+                ", year=" + year;
     }
 }
